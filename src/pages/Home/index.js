@@ -7,6 +7,7 @@ import primeiroGrande from '../../assets/imagens/1.png'
 import segundoGrande from '../../assets/imagens/2.png'
 import terceiroGrande from '../../assets/imagens/3.png'
 import { useState } from "react";
+import Header from "../../components/Header";
 
 const SectionPodiumPequeno = styled.section`
 div{
@@ -104,6 +105,7 @@ function Home() {
     const podium = alunos.slice(0, 3)
     return (
         <>
+        <Header />
             <SectionPodiumPequeno>
                 <div>
                     <img src={primeiroPequeno} alt="imagem primeiro lugar" />
@@ -125,17 +127,17 @@ function Home() {
             <SectionPodiumGrande>
                 <div className="segundo">
                     <img src={segundoGrande} alt="imagem segundo lugar" />
-                    <h2>{podium[1].nome} * *</h2>
+                    <h2>{podium[1].nome} </h2>
                     <h3>Pontos: <span>{podium[1].pontos}</span></h3>
                 </div>
                 <div className="primeiro">
                     <img src={primeiroGrande} alt="imagem primeiro lugar" />
-                    <h2>{podium[0].nome} * * </h2>
+                    <h2>{podium[0].nome} </h2>
                     <h3>Pontos: <span>{podium[0].pontos}</span></h3>
                 </div>
                 <div className="terceiro">
                     <img src={terceiroGrande} alt="imagem terceiro lugar" />
-                    <h2>{podium[2].nome} * *</h2>
+                    <h2>{podium[2].nome} </h2>
                     <h3>Pontos: <span>{podium[2].pontos}</span></h3>
                 </div>
             </SectionPodiumGrande>
@@ -145,7 +147,7 @@ function Home() {
                 <ul>
                     {alunos.slice(3).map((aluno, index) => (
                         <li key={index}>
-                            <strong> {aluno.nome} </strong> - {aluno.pontos} pontos *  *
+                            <strong><span>{`${index + 4 }°`}</span> {aluno.nome} </strong> - {aluno.pontos} pontos
                         </li>
                     ))}
                 </ul>
