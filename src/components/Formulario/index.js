@@ -91,7 +91,6 @@ function Formulario({ VerificarUsuario }) {
                 </div>
                 <div className="divBotoes">
                     <Button informacao={"Login"} />
-                    <Button informacao={"Registrar"} />
                 </div>
             </ContainerDiv>
         </ModealForm>

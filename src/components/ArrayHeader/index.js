@@ -1,18 +1,17 @@
 function ArrayHeader() {
     return [
-
         {
             Link: '/',
-            Pagina: 'Home'
+            Pagina: 'Turmas'
         },
-        /* {
-                    Link: '/turmas',
-                    Pagina: 'Turmas'
-                }, */
-        {
+        /*{
+                        Link: '/Campeonato',
+                        Pagina: 'Campeonato'
+            }, */
+/*         {
             Link: '/login',
             Pagina: 'Login'
-        },
+        }, */
     ]
 }
 
