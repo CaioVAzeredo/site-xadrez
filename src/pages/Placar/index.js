@@ -135,10 +135,16 @@ function Placar() {
         { nome: "Ricardo", pontos: 84 },
         { nome: "Beatriz", pontos: 92 },]
     )
-    const podium = alunos.slice(0, 3)
+
+    const alunosEmOrdem = alunos.sort((a, b) => b.pontos - a.pontos)
+    const podium = alunosEmOrdem.slice(0, 3)
 
     function Editar() {
         alert("Editar")
+    }
+
+    function AdicionarAluno() {
+        alert("Adicionar Aluno")
     }
 
     return (
@@ -194,7 +200,7 @@ function Placar() {
                             <strong><span>{`${index + 4}°`}</span> {aluno.nome} </strong> - {aluno.pontos} pontos <img src={iconEdit} alt="icone editar" onClick={Editar} />
                         </li>
                     ))}
-                    <Button informacao="Adicionar Aluno" />
+                    <Button informacao="Adicionar Aluno" onClick={AdicionarAluno} />
                 </ul>
             </SectionAlunos>
 
