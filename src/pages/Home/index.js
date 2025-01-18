@@ -2,7 +2,7 @@ import styled from "styled-components"
 import Header from "../../components/Header"
 import { useState } from "react"
 
-const Turmas = styled.section`
+const Turmas = styled.li`
 width: 400px;
 height: 80%;
 background-color: white;
@@ -12,7 +12,7 @@ text-align: center;
 border-radius: 10px;
 &:hover{
     box-shadow: 1px 1px 5px gray;
-
+cursor: pointer;
 
 }
 `
@@ -28,7 +28,10 @@ function Home() {
     return (
         <>
             <Header />
-            {turmas.map((turma)=><Turmas>{turma.Turma}</Turmas>)}
+            <ul>
+            {turmas.map((turma, id)=><Turmas key={turma.id}>{turma.Turma}</Turmas>)}
+
+            </ul>
         </>
     )
 }
