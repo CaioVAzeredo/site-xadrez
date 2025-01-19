@@ -4,14 +4,11 @@ function ArrayHeader() {
             Link: '/',
             Pagina: 'Turmas'
         },
-        /*{
-                        Link: '/Campeonato',
-                        Pagina: 'Campeonato'
-            }, */
-/*         {
-            Link: '/login',
+        {
+            Link: '/Login',
             Pagina: 'Login'
-        }, */
+        },
+
     ]
 }
 

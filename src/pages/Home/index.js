@@ -1,20 +1,27 @@
 import styled from "styled-components"
-import Header from "../../components/Header"
 import { useState } from "react"
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Turmas = styled.li`
+
+const ContainerUL = styled.ul`
 width: 400px;
 height: 80%;
-background-color: white;
-margin: 20px auto;
+margin: 50px auto;
 padding: 30px;
 text-align: center;
+
+@media (max-width: 768px){
+    width: 80%;
+}
+`
+const Turmas = styled.li`
+padding: 10px;
+margin: 30px auto;
+background-color: white;
 border-radius: 10px;
 &:hover{
     box-shadow: 1px 1px 5px gray;
-cursor: pointer;
-
+    cursor: pointer;
 }
 `
 function Home() {
@@ -32,11 +39,10 @@ function Home() {
 
     return (
         <>
-            
-            <ul>
+            <ContainerUL>
                 {turmas.map((turma) => <Turmas key={turma.id} onClick={() => SelecionaPagina(turma.id)}>{turma.Turma}</Turmas>)}
 
-            </ul>
+            </ContainerUL>
         </>
     )
 }
