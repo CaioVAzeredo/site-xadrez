@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import Header from "../../components/Header"
 import { useState } from "react"
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Turmas = styled.li`
 width: 400px;
@@ -17,19 +18,23 @@ cursor: pointer;
 }
 `
 function Home() {
+    const navigate = useNavigate();
     const [turmas, setTurmas] = useState([
         { Turma: "INTEGRAL ASA NORTE 4° e 5° ano", id: 1 },
         { Turma: "INTEGRAL ASA NORTE infantil", id: 2 },
         { Turma: "INTEGRAL AGUAS CLARAS 4° e 5° ano", id: 3 },
-        { Turma: "INTEGRAL AGUAS CLARAS infantil",  id: 4 },
+        { Turma: "INTEGRAL AGUAS CLARAS infantil", id: 4 },
     ]);
-
+    function SelecionaPagina(id) {
+        navigate(`/placar/${id}`)
+        console.log(`valor de id: ${id}`)
+    }
 
     return (
         <>
-            <Header />
+            
             <ul>
-            {turmas.map((turma, id)=><Turmas key={turma.id}>{turma.Turma}</Turmas>)}
+                {turmas.map((turma) => <Turmas key={turma.id} onClick={() => SelecionaPagina(turma.id)}>{turma.Turma}</Turmas>)}
 
             </ul>
         </>
