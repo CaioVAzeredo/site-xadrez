@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import Button from "../../components/Button";
-import imgLogin from "../../assets/imagens/login-de-usuario.png"
-import imgSenha from "../../assets/imagens/simbolo-de-cadeado-para-interface-de-seguranca.png"
+import Button from "../Button";
+import imgLogin from "../../../assets/imagens/login-de-usuario.png"
+import imgSenha from "../../../assets/imagens/simbolo-de-cadeado-para-interface-de-seguranca.png"
 import { useState } from "react";
-import Campo from "../../components/Campo";
+import Campo from "../Campo";
 
 const ModealForm = styled.form`
 width: 80%;

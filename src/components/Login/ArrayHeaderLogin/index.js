@@ -1,4 +1,4 @@
-function ArrayHeader() {
+function ArrayHeaderLogin() {
     return [
         {
             Link: '/',
@@ -12,4 +12,4 @@ function ArrayHeader() {
     ]
 }
 
-export default ArrayHeader
+export default ArrayHeaderLogin

@@ -2,11 +2,9 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import iconEdit from '../../assets/imagens/editar-texto.png'
 import primeiroPequeno from '../../assets/imagens/1-mobile.png'
 import segundoPequeno from '../../assets/imagens/2-mobile.png'
 import terceiroPequeno from '../../assets/imagens/3-mobile.png'
-import Button from "../../components/Button";
 import segundoGrande from '../../assets/imagens/2.png'
 import primeiroGrande from '../../assets/imagens/1.png'
 import terceiroGrande from '../../assets/imagens/3.png'
@@ -121,72 +119,14 @@ li{
 
 `
 
-const ContainerForaDoModal = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-`;
-
-const ModalAddAluno = styled.div`
-position: relative;
-  width: 45%;
-  height: 75%;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-  border-radius: 10px;
-`
-
-const ModalAtualizaALuno = styled.div`
-position: relative;
-  width: 45%;
-  height: 75%;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-  border-radius: 10px;
-`
-
 function Placar() {
-    const { id } = useParams() // Obtém o ID da turma da URL
+    const { id } = useParams()
     const [ranking, setRanking] = useState([])
-    const [isModalAddAluno, setIsModalAddAluno] = useState(false)
-    const [isModalAtualizaAluno, setIsModalAtualizaAluno] = useState(false)
 
     const rankingOrganizado = ranking.sort((a, b) => b.pontos - a.pontos)
     const podium = rankingOrganizado.slice(0, 3)
 
-    
-    function AtualizaAluno() {
-        setIsModalAtualizaAluno(!isModalAtualizaAluno)
-    }
-    function FecharModalAtualizaAluno() {
-        setIsModalAtualizaAluno(!isModalAtualizaAluno)
-    }
-
-    function AdicionarAluno() {
-        setIsModalAddAluno(!isModalAddAluno)
-    }
-
-    function FecharModalAdicionarAluno() {
-        setIsModalAddAluno(!isModalAddAluno)
-    }
-
     useEffect(() => {
-        // Dados estáticos simulando o ranking da turma
         const dadosEstáticos = {
             1: [
                 { id: 1, nome: 'Joao Silva', pontos: 135 },
@@ -247,41 +187,34 @@ function Placar() {
                 <div>
                     <img src={primeiroPequeno} alt="imagem primeiro lugar" />
                     <h2>{podium[0]?.nome}</h2>
-                    <h3>Pontos: <span>{podium[0]?.pontos}</span>
-                        <img src={iconEdit} alt="icone editar" onClick={AtualizaAluno} className="imgEdit" /></h3>
+                    <h3>Pontos: <span>{podium[0]?.pontos}</span></h3>
                 </div>
                 <div>
                     <img src={segundoPequeno} alt="imagem segundo lugar" />
                     <h2>{podium[1]?.nome}</h2>
-                    <h3>Pontos: <span>{podium[1]?.pontos}</span>
-                        <img src={iconEdit} alt="icone editar" onClick={AtualizaAluno} className="imgEdit" /></h3>
+                    <h3>Pontos: <span>{podium[1]?.pontos}</span></h3>
                 </div>
                 <div>
                     <img src={terceiroPequeno} alt="imagem terceiro lugar" />
                     <h2>{podium[2]?.nome}</h2>
-                    <h3>Pontos: <span>{podium[2]?.pontos}</span>
-                        <img src={iconEdit} alt="icone editar" onClick={AtualizaAluno} className="imgEdit" /></h3>
+                    <h3>Pontos: <span>{podium[2]?.pontos}</span></h3>
                 </div>
             </SectionPodiumPequeno>
-
             <SectionPodiumGrande>
                 <div className="segundo">
                     <img src={segundoGrande} alt="imagem segundo lugar" />
                     <h2>{podium[1]?.nome} </h2>
-                    <h3>Pontos: <span>{podium[1]?.pontos}</span>
-                        <img src={iconEdit} alt="icone editar" onClick={AtualizaAluno} className="imgEdit" /></h3>
+                    <h3>Pontos: <span>{podium[1]?.pontos}</span></h3>
                 </div>
                 <div className="primeiro">
                     <img src={primeiroGrande} alt="imagem primeiro lugar" />
                     <h2>{podium[0]?.nome} </h2>
-                    <h3>Pontos: <span>{podium[0]?.pontos}</span>
-                        <img src={iconEdit} alt="icone editar" onClick={AtualizaAluno} className="imgEdit" /></h3>
+                    <h3>Pontos: <span>{podium[0]?.pontos}</span></h3>
                 </div>
                 <div className="terceiro">
                     <img src={terceiroGrande} alt="imagem terceiro lugar" />
                     <h2>{podium[2]?.nome} </h2>
-                    <h3>Pontos: <span>{podium[2]?.pontos}</span>
-                        <img src={iconEdit} alt="icone editar" onClick={AtualizaAluno} className="imgEdit" /></h3>
+                    <h3>Pontos: <span>{podium[2]?.pontos}</span></h3>
                 </div>
             </SectionPodiumGrande>
             <SectionAlunos>
@@ -289,28 +222,11 @@ function Placar() {
                 <ul>
                     {ranking.slice(3).map((aluno, index) => (
                         <li key={index}>
-                            <strong><span>{`${index + 4}°`}</span> {aluno.nome} </strong> - {aluno.pontos} pontos <img src={iconEdit} alt="icone editar" onClick={AtualizaAluno} />
+                            <strong><span>{`${index + 4}°`}</span> {aluno.nome} </strong> - {aluno.pontos} pontos
                         </li>
                     ))}
-                    <Button informacao="Adicionar Aluno" onClick={AdicionarAluno} />
                 </ul>
             </SectionAlunos>
-
-            {isModalAddAluno && (<>
-                <ContainerForaDoModal onClick={FecharModalAdicionarAluno}>
-                    <ModalAddAluno>
-
-                    </ModalAddAluno>
-                </ContainerForaDoModal>
-            </>)}
-
-            {isModalAtualizaAluno && (<>
-                <ContainerForaDoModal onClick={FecharModalAtualizaAluno}>
-                    <ModalAtualizaALuno>
-
-                    </ModalAtualizaALuno>
-                </ContainerForaDoModal>
-            </>)}
         </>)
 }
 

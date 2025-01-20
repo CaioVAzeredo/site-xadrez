@@ -41,7 +41,6 @@ function Home() {
         <>
             <ContainerUL>
                 {turmas.map((turma) => <Turmas key={turma.id} onClick={() => SelecionaPagina(turma.id)}>{turma.Turma}</Turmas>)}
-
             </ContainerUL>
         </>
     )

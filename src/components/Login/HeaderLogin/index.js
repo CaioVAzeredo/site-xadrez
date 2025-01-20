@@ -2,7 +2,7 @@ import styled from "styled-components";
 import './estilo.css'
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import ArrayHeader from "../ArrayHeader";
+import ArrayHeaderLogin from "../ArrayHeaderLogin";
 
 const HeaderContainer = styled.header`
     background-color: rgb(121, 203, 250);
@@ -40,12 +40,12 @@ function Header() {
         return () => window.removeEventListener('resize', tela);
     }, []);
 
-    const opcoes = ArrayHeader();
-    
+    const opcoes = ArrayHeaderLogin();
+
     return (
         <HeaderContainer>
             <nav>
-                
+
                 <div
                     onClick={alternaMenu}
                     className={`mobile-menu ${isOpen ? 'open' : ''}`}
@@ -57,7 +57,11 @@ function Header() {
 
                 {(isDesktop || isOpen) && (
                     <>
-                        <ul className="nav-list">{opcoes.map(opcao => <li><Link to={opcao.Link} onClick={alternaMenu}>  {opcao.Pagina} </Link></li>)} <div className="EspacoEmBranco" onClick={alternaMenu}></div> </ul>
+                        <ul className="nav-list">
+                            {opcoes.map(opcao =>
+                                <li><Link to={opcao.Link} onClick={alternaMenu}>  {opcao.Pagina} </Link></li>)}
+                            <div className="EspacoEmBranco" onClick={alternaMenu}></div>
+                        </ul>
                     </>
 
                 )}
