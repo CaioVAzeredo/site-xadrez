@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Button from "../Button";
-import imgLogin from "../../../assets/imagens/login-de-usuario.png"
-import imgSenha from "../../../assets/imagens/simbolo-de-cadeado-para-interface-de-seguranca.png"
+import imgLogin from "../../assets/imagens/login-de-usuario.png"
+import imgSenha from "../../assets/imagens/simbolo-de-cadeado-para-interface-de-seguranca.png"
 import { useState } from "react";
 import Campo from "../Campo";
 
@@ -54,38 +54,39 @@ img{
 `
 
 function Formulario({ VerificarUsuario }) {
-    const [login, setLogin] = useState('');
-    const [senha, setSenha] = useState('');
+    const [login, setLogin] = useState(''); // Correção: login em minúsculas
+    const [senha, setSenha] = useState(''); // Correção: senha em minúsculas
 
     function aoSubmeter(e) {
-        e.preventDefault()
+        e.preventDefault();
 
         VerificarUsuario({
-            login: login,
-            senha: senha
-        })
+            login: login, // Consistência no uso de 'login'
+            senha: senha, // Consistência no uso de 'senha'
+        });
     }
+
     return (
         <ModealForm onSubmit={aoSubmeter}>
             <h1>LOGIN</h1>
             <ContainerDiv>
                 <div className="divLogin">
                     <div>
-                        <img src={imgLogin} />
+                        <img src={imgLogin} alt="Login Icon" />
                         <Campo
                             placeholder="Login"
                             type="text"
-                            value={login}
-                            aoAlterado={(valor) => setLogin(valor)}
+                            value={login} // Ligação com o estado 'login'
+                            aoAlterado={(valor) => setLogin(valor)} // Atualiza o estado
                         />
                     </div>
                     <div>
-                        <img src={imgSenha} />
+                        <img src={imgSenha} alt="Senha Icon" />
                         <Campo
                             placeholder="Senha"
                             type="password"
-                            value={senha}
-                            aoAlterado={(valor) => setSenha(valor)}
+                            value={senha} // Ligação com o estado 'senha'
+                            aoAlterado={(valor) => setSenha(valor)} // Atualiza o estado
                         />
                     </div>
                 </div>
@@ -94,7 +95,7 @@ function Formulario({ VerificarUsuario }) {
                 </div>
             </ContainerDiv>
         </ModealForm>
-    )
+    );
 }
 
-export default Formulario
+export default Formulario;

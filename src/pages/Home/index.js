@@ -34,7 +34,6 @@ function Home() {
     ]);
     function SelecionaPagina(id) {
         navigate(`/placar/${id}`)
-        console.log(`valor de id: ${id}`)
     }
 
     return (

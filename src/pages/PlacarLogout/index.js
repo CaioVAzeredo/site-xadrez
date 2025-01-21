@@ -6,7 +6,7 @@ import iconEdit from '../../assets/imagens/editar-texto.png'
 import primeiroPequeno from '../../assets/imagens/1-mobile.png'
 import segundoPequeno from '../../assets/imagens/2-mobile.png'
 import terceiroPequeno from '../../assets/imagens/3-mobile.png'
-import Button from "../../components/Login/Button";
+import Button from "../../components/Button";
 import segundoGrande from '../../assets/imagens/2.png'
 import primeiroGrande from '../../assets/imagens/1.png'
 import terceiroGrande from '../../assets/imagens/3.png'
