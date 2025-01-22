@@ -76,7 +76,7 @@ function Formulario({ VerificarUsuario }) {
                         <Campo
                             placeholder="Login"
                             type="text"
-                            value={login} // Ligação com o estado 'login'
+                            valor={login}
                             aoAlterado={(valor) => setLogin(valor)} // Atualiza o estado
                         />
                     </div>

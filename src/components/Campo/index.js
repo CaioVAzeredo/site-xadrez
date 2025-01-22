@@ -14,16 +14,21 @@ font-family: "Poppins", serif;
     font-size: 20px;
 }
 `
+const ContainerLabel = styled.label`
+font-family: "Poppins", serif;
+font-size: 20px;
+`
 
-function Campo({ placeholder, login, aoAlterado, type }) {
+function Campo({ placeholder, valor, aoAlterado, type, descricao = false, valorDescricao }) {
     return (
         <>
+            {descricao && (<ContainerLabel>{valorDescricao}</ContainerLabel>)}
             <InputContainer
                 placeholder={placeholder}
                 type={type}
-                value={login}
+                value={valor}
                 onChange={(e) => aoAlterado(e.target.value)}>
-            </InputContainer>
+            </InputContainer >
         </>
     )
 }

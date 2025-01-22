@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import Button from '../../components/Button'
 
 
 const ContainerUL = styled.ul`
@@ -24,7 +25,8 @@ border-radius: 10px;
     cursor: pointer;
 }
 `
-function Home() {
+
+function HomeParaFazerLogin() {
     const navigate = useNavigate();
     const [turmas, setTurmas] = useState([
         { Turma: "INTEGRAL ASA NORTE 4° e 5° ano", id: 1 },
@@ -32,17 +34,20 @@ function Home() {
         { Turma: "INTEGRAL AGUAS CLARAS 4° e 5° ano", id: 3 },
         { Turma: "INTEGRAL AGUAS CLARAS infantil", id: 4 },
     ]);
+
     function SelecionaPagina(id) {
         navigate(`/placar/${id}`)
     }
+
 
     return (
         <>
             <ContainerUL>
                 {turmas.map((turma) => <Turmas key={turma.id} onClick={() => SelecionaPagina(turma.id)}>{turma.Turma}</Turmas>)}
             </ContainerUL>
+
         </>
     )
 }
 
-export default Home
+export default HomeParaFazerLogin

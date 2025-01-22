@@ -11,6 +11,8 @@ import segundoGrande from '../../assets/imagens/2.png'
 import primeiroGrande from '../../assets/imagens/1.png'
 import terceiroGrande from '../../assets/imagens/3.png'
 
+import { v4 as uuidv4 } from 'uuid';
+
 const SectionPodiumPequeno = styled.section`
 .imgEdit{
     width: 20px;
@@ -186,7 +188,7 @@ function Placar() {
     }
 
     useEffect(() => {
-        const dadosEstáticos = {
+        const dadosEstaticos = {
             1: [
                 { id: 1, nome: 'Joao Silva', pontos: 135 },
                 { id: 2, nome: 'Maria Souza', pontos: 140 },
@@ -236,7 +238,7 @@ function Placar() {
         };
 
         // Simulando busca dos dados da turma
-        setRanking(dadosEstáticos[id] || []);
+        setRanking(dadosEstaticos[id] || []);
     }, [id]);
 
 
