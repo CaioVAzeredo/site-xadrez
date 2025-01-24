@@ -5,7 +5,7 @@ import imgSenha from "../../assets/imagens/simbolo-de-cadeado-para-interface-de-
 import { useState } from "react";
 import Campo from "../Campo";
 
-const ModealForm = styled.form`
+const ModalForm = styled.form`
 width: 80%;
 height: 550px;
 background-color: white;
@@ -67,7 +67,7 @@ function Formulario({ VerificarUsuario }) {
     }
 
     return (
-        <ModealForm onSubmit={aoSubmeter}>
+        <ModalForm onSubmit={aoSubmeter}>
             <h1>LOGIN</h1>
             <ContainerDiv>
                 <div className="divLogin">
@@ -94,7 +94,7 @@ function Formulario({ VerificarUsuario }) {
                     <Button informacao={"Login"} />
                 </div>
             </ContainerDiv>
-        </ModealForm>
+        </ModalForm>
     );
 }
 

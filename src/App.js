@@ -9,7 +9,7 @@ import HomeParaFazerLogin from "./pages/HomeParaFazerLogin";
 import HomeParaFazerLogout from "./pages/HomeParaFazerLogout";
 
 function App() {
-  const [token, setToken] = useState(null)
+  const [token, setToken] = useState("null")
 
   useEffect(() => {
     const tokenSalvo = localStorage.getItem("authToken")

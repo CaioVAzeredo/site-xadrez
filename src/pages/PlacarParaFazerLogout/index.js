@@ -12,6 +12,7 @@ import primeiroGrande from '../../assets/imagens/1.png'
 import terceiroGrande from '../../assets/imagens/3.png'
 
 import { v4 as uuidv4 } from 'uuid';
+import FormularioAddAluno from "../../components/FormularioAddAluno";
 
 const SectionPodiumPequeno = styled.section`
 .imgEdit{
@@ -171,7 +172,7 @@ function Placar() {
     const rankingOrganizado = ranking.sort((a, b) => b.pontos - a.pontos)
     const podium = rankingOrganizado.slice(0, 3)
 
-    
+
     function AtualizaAluno() {
         setIsModalAtualizaAluno(!isModalAtualizaAluno)
     }
@@ -300,7 +301,9 @@ function Placar() {
             {isModalAddAluno && (<>
                 <ContainerForaDoModal onClick={FecharModalAdicionarAluno}>
                     <ModalAddAluno>
+                        <FormularioAddAluno
 
+                        />
                     </ModalAddAluno>
                 </ContainerForaDoModal>
             </>)}
